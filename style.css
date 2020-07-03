@@ -48,6 +48,7 @@ body>div:nth-of-type(2) input[type="checkbox"] {
   -webkit-appearance: none;
   outline: 0;
   cursor: pointer;
+  display: none; /* temp */
 }
 
 body>div:nth-of-type(2) input[type="checkbox"]:before {
