@@ -31,7 +31,8 @@ body>div:first-of-type p {
   font-size: 1.5em;
 }
 
-body>div:first-of-type a {
+body>div:first-of-type a,
+body>div:nth-of-type(2) a {
   color: initial !important;
 }
 
@@ -40,15 +41,18 @@ body>div:nth-of-type(2) {
 }
 
 body>div:nth-of-type(2) input[type="checkbox"] {
-  box-sizing: border-box;
   display: block;
   position: relative;
+  width: 100%;
   margin: 20px auto;
+  border: 0;
   font-size: 1.5em;
+  text-align: center;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-tap-highlight-color: transparent;
   outline: 0;
   cursor: pointer;
-  display: none; /* temp */
 }
 
 body>div:nth-of-type(2) input[type="checkbox"]:before {
@@ -58,7 +62,7 @@ body>div:nth-of-type(2) input[type="checkbox"]:before {
 body>div:nth-of-type(2) input[type="checkbox"]:after {
   content: "";
   display: inline-block;
-  width: 20px;
+  width: 1em;
   height: 1em;
   margin: 0 8px;
   left: 100%;
@@ -79,7 +83,8 @@ body>div:nth-of-type(2) input:checked + div + div {
   display: block;
 }
 
-body>div:nth-of-type(2) a {
+body>div:nth-of-type(2)>a,
+body>div:nth-of-type(2)>div>a {
   display: inline-block;
   position: relative;
   margin: 0 .5vw;
@@ -98,7 +103,6 @@ body>div:nth-of-type(2) img:hover {
   border: 4px #111 solid;
 }
 
-body>div:nth-of-type(2) a:hover:before,
 body>div:nth-of-type(2) a:not([href]):before {
   content: "Coming Soon!";
   position: absolute;
@@ -109,12 +113,6 @@ body>div:nth-of-type(2) a:not([href]):before {
   text-align: center;
   font-size: 20px;
   pointer-events: none;
-}
-
-body>div:nth-of-type(2) a[href]:hover:before {
-  content: "";
-  top: 0;
-  background: url(images/download.svg) center/40% no-repeat;
 }
 
 body>div:nth-of-type(2)>div:nth-of-type(2) {
@@ -137,12 +135,16 @@ body>div:nth-of-type(2)>div:nth-of-type(2) ul strong {
   margin-right: 10px;
 }
 
+body>div:nth-of-type(2)>div:nth-of-type(2) li {
+  margin-bottom: 1em;
+}
+
 @media all and (max-width: 500px) {
   body>div:first-of-type,
   body>div:nth-of-type(2)>div:nth-of-type(2) ul {
     width: 90%;
   }
-  body>div:nth-of-type(2) img {
+  body>div:nth-of-type(2) a img {
     width: 27vw;
     height: 48vw;
     border-radius: 4.5vw;
