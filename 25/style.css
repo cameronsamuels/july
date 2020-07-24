@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  margin-bottom: 30px;
+  background: #ffdb4f;
+  color: #111;
+  font-family: helvetica, arial, sans-serif;
+  text-align: left;
+}
+
+header {
+  padding: 25px;
+  background: #444;
+  color: #fff;
+}
+
+header a {
+  color: #fff !important;
+}
+
+body>div a {
+  color: initial !important;
+}
+
+h2 {
+  margin-top: 2em;
+}
+
+body>div{
+  width: 90%;
+  max-width: 450px;
+  margin: auto;
+}
+
+body>div:first-of-type {
+  max-width: 550px;
+  text-align: center;
+}
+
+body>div:first-of-type h1 {
+  font-size: 3.5em;
+  margin-bottom: 0;
+}
+
+body>div:first-of-type p {
+  font-size: 1.5em;
+}
+
+#js-write h2,
+#js-write input,
+#js-write textarea,
+#js-write #js-submit {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+#js-write input,
+#js-write textarea {
+  margin: 10px 0;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-image: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  resize: none;
+  cursor: text;
+  font-size: 1em;
+  font-family: initial;
+  line-height: 1.15;
+}
+
+#js-write input:hover,
+#js-write textarea:hover {
+  background-color: rgba(245, 245, 245, 0.6);
+}
+
+#js-write input,
+#js-write textarea {
+  padding-top: calc(15px + 1.3em);
+}
+
+#js-write div:not(#js-submit) {
+  position: relative;
+}
+
+#js-write label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: .8em;
+  font-family: initial;
+  line-height: 1.15;
+}
+
+#js-write #js-submit {
+  padding: 15px 0;
+  background: #444;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+#js-read {
+  display: inline-block;
+  padding: 0;
+  list-style-type: none;
+}
+
+#js-read li {
+  margin-bottom: 1em;
+}
