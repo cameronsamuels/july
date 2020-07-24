@@ -26,6 +26,7 @@ document.querySelector("#js-submit").addEventListener("click", function() {
       alert("There was an error, please try again");
     } else {
       document.querySelector("#js-write").textContent = "Thank you for the response!";
+      document.querySelector("#js-write").setAttribute("class", "submitted");
     }
   });
 });
@@ -52,7 +53,12 @@ database.ref("responses").on("value", function(snapshot) {
     if (!document.querySelector("#" + responses[i].id)) {
       let el = document.createElement("li");
       el.setAttribute("id", responses[i].id);
-      el.textContent = responses[i].response + " - " + responses[i].name;
+      let strong = document.createElement("strong");
+      strong.textContent = responses[i].name + " - ";
+      el.appendChild(strong);
+      let span = document.createElement("span");
+      span.textContent = responses[i].response;
+      el.appendChild(span);
       container.insertBefore(el, container.firstChild);
     }
   }
