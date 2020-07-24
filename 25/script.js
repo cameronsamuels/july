@@ -13,13 +13,20 @@ var database = firebase.database();
 document.querySelector("#js-submit").addEventListener("click", function() {
   var name = document.querySelector("#js-name").value;
   var response = document.querySelector("#js-response").value;
-  if (!name || !response) {
+  var confirmed = document.querySelector("#js-confirm").checked;
+  if (!name || !response || !confirmed) {
     alert("Please complete required fields");
     return;
   }
   database.ref("responses").push({
     "name": name,
     "response": response
+  }, function(error) {
+    if (error) {
+      alert("There was an error, please try again");
+    } else {
+      document.querySelector("#js-write").textContent = "Thank you for the response!";
+    }
   });
 });
 
@@ -51,3 +58,20 @@ database.ref("responses").on("value", function(snapshot) {
   }
 
 });
+
+(function() {
+  var el = document.querySelector("#js-response");
+  function resize() {
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+  }
+  function delayedResize() {
+    window.setTimeout(resize, 0);
+  }
+  el.addEventListener("change", resize);
+  el.addEventListener("cut", delayedResize);
+  el.addEventListener("paste", delayedResize);
+  el.addEventListener("drop", delayedResize);
+  el.addEventListener("keydown", delayedResize);
+  resize();
+})();

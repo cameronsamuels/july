@@ -46,7 +46,7 @@ body>div:first-of-type p {
 }
 
 #js-write h2,
-#js-write input,
+#js-write input[type="text"],
 #js-write textarea,
 #js-write #js-submit {
   box-sizing: border-box;
@@ -54,10 +54,10 @@ body>div:first-of-type p {
   width: 100%;
 }
 
-#js-write input,
+#js-write input[type="text"],
 #js-write textarea {
   margin: 10px 0;
-  padding: 15px;
+  padding: calc(15px + 1.3em) 15px 15px;
   background-color: rgba(255, 255, 255, 0.6);
   background-image: none;
   -webkit-box-shadow: none;
@@ -71,23 +71,20 @@ body>div:first-of-type p {
   font-size: 1em;
   font-family: initial;
   line-height: 1.15;
+  overflow: hidden;
 }
 
-#js-write input:hover,
+#js-write input[type="text"]:hover,
 #js-write textarea:hover {
   background-color: rgba(245, 245, 245, 0.6);
 }
 
-#js-write input,
-#js-write textarea {
-  padding-top: calc(15px + 1.3em);
-}
-
-#js-write div:not(#js-submit) {
+#js-write div:first-of-type,
+#js-write div:nth-of-type(2) {
   position: relative;
 }
 
-#js-write label {
+#js-write label:not([for="js-confirm"]) {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -96,7 +93,17 @@ body>div:first-of-type p {
   line-height: 1.15;
 }
 
+#js-write div:nth-of-type(3) input[type="checkbox"] {
+  display: inline;
+}
+
+#js-write div:nth-of-type(3) label {
+  display: inline;
+  position: relative;
+}
+
 #js-write #js-submit {
+  margin-top: 15px;
   padding: 15px 0;
   background: #444;
   color: #fff;
