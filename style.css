@@ -150,3 +150,10 @@ body>div:nth-of-type(2)>div:nth-of-type(2) li {
     border-radius: 4.5vw;
   }
 }
+
+@media print {
+  body>div:first-of-type,
+  body>div:nth-of-type(2)>div:nth-of-type(2) ul {
+    width: 90%;
+  }
+}
