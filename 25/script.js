@@ -23,7 +23,7 @@ document.querySelector("#js-submit").addEventListener("click", function() {
     "response": response
   }, function(error) {
     if (error) {
-      alert("There was an error, please try again");
+      alert("This application is no longer accepting submissions");
     } else {
       document.querySelector("#js-write").textContent = "Thank you for the response!";
       document.querySelector("#js-write").setAttribute("class", "submitted");
